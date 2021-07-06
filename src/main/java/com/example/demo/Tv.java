@@ -1,22 +1,63 @@
 package com.example.demo;
 
-class Tv2 {
+import com.sun.xml.internal.ws.api.ha.StickyFeature;
+
+class Speaker {
+    int dolby;
+    public String sound(){
+        return "dolby sound ....";
+    }
+}
+//상속
+class SmartTv extends Speaker{
+    int number;
+
+    @Override
+    public String toString(){
+        System.out.println("오버라이딩 메소드");
+        return "리턴값이 필요해";
+    }
+    @Override
+    public String sound(){
+        return "Tv dolby Sound";
+    }
+}
+
+
+class TvControl {
     public static void main(String[] args) {
         Tv LGTv = new Tv("LG");
         Tv sTv = new Tv("Samsung");
         Tv hTv = new Tv("HP", 2048);
 
-        //System.out.println(hTv.current_channel);
-        System.out.println(hTv.getCurrent_channel());
-        //hTv.current_channel = 11;
-        hTv.setCurrent_channel(11);
-        //System.out.println(hTv.current_channel);
-        System.out.println(hTv.getCurrent_channel());
+
+
+        /*오버로딩
+        add (1,2);
+        add (1.1,2.3); */
+
+        System.out.println(hTv.toString());
+        hTv.sound();
+
+        System.out.println(hTv.current_channel);
+        //System.out.println(hTv.getCurrent_channel());
+        //hTv.current_channel = 111111111;
+        hTv.setCurrent_channel(123456);
+        System.out.println(hTv.current_channel);
+        //System.out.println(hTv.getCurrent_channel());
 
         System.out.println(hTv.resolution);
         // Tv를 켜기
         // 볼륨 키우기
         // 채널 바꾸기
+        //System.out.println(hTv.getChannel());
+             //채널 대역대의 시작주소
+        /*
+        int[] arr = hTv.getChannel();
+        for(int i=0; i<hTv.getChannel().length; i++){
+            System.out.println(arr[i]);
+            //Thread.sleep(500);
+        }*/
     }
         /*add(5,3);  int
         add(3.3,6);  double
@@ -28,14 +69,18 @@ class Tv2 {
         return a1+a2;
     }*/
 }
-public class Tv {
+public class Tv extends Speaker {
     //속성
     String model_name;
     int[] channel; //참조변수
     //public int current_channel; //가능
-    private int current_channel; //접근 권한을 안줌
+    //private int current_channel; //접근 권한을 안줌
+    int current_channel;
     int resolution;
     boolean power;
+
+    static int password;
+    static void display(){}
 
     //생성자
     Tv(String tv_name) {    //
@@ -63,14 +108,27 @@ public class Tv {
             // channel[i] = i + 1;
             //for(int j = 0; j< ){}   이중 반복문 */
             }
-
+    //Getter Setter 마우스오른쪽-Generate-getter and setter
     public int getCurrent_channel() {
         return current_channel;
     }
 
     public void setCurrent_channel(int current_channel) {
-        this.current_channel = current_channel;
+        if(current_channel > 100){
+            System.out.println("입력오류 : 없는 채널입니다.");
+        } else {
+            this.current_channel = current_channel;
+        }
     }
+
+    public int[] getChannel() {
+        return channel;
+    }
+
+    public void setChannel(int[] channel) {
+        this.channel = channel;
+    }
+
 }
         //public TvControl getTv() {
           //  return this;
@@ -93,5 +151,11 @@ public class Tv {
     /*boolean onOff(){
         System.out.println("Tv on~~~");
     } */
-
-
+    //오버로딩
+    /*public int add(int x, int y/*파라미터) {
+        return x+y;
+    }
+    public double add(double x, double y){
+        return x+y;
+    }
+        */

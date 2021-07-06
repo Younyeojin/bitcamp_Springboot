@@ -3,7 +3,7 @@ package com.example.demo;
 class BankAccount {
     int balance = 0; //예금 잔액
 
-    public int deposit (int amount){
+    private int deposit (int amount){  //public : 접근제어자
         balance += amount;
         return balance;
     }
