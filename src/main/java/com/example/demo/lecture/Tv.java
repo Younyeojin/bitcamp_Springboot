@@ -1,6 +1,4 @@
-package com.example.demo;
-
-import com.sun.xml.internal.ws.api.ha.StickyFeature;
+package com.example.demo.lecture;
 
 class Speaker {
     int dolby;

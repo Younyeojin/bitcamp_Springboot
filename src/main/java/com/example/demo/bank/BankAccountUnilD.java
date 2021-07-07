@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.bank;
 
 class Circle{
     //상수(Constant)

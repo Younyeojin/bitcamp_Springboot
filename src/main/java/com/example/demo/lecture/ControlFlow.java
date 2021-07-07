@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.lecture;
 
 public class ControlFlow {
     public static void main(String[] args) {

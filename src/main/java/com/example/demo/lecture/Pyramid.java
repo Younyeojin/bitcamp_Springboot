@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.lecture;
 
 public class Pyramid {
     public static void main(String[] args) {
@@ -15,7 +15,7 @@ public class Pyramid {
             }
         }
     }*/
-        int score = 85;
+       /* int score = 85;
         String grade=""
         if (score >98){
             grade = "A";
@@ -32,5 +32,6 @@ public class Pyramid {
                 ....
             case 30:
 
-        }
+        }*/
+    }
 }
