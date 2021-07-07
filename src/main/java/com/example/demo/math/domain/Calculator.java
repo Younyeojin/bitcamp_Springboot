@@ -25,6 +25,6 @@ public class Calculator {
 
     @Override
     public String toString() {
-        return String.format("%d+%d=", num1, num2, num1+num2);
+        return String.format("%d+%d=%d", num1, num2, num1+num2);
     }
 }

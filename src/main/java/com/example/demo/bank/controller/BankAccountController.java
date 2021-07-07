@@ -1,22 +1,9 @@
-package com.example.demo.bank;
+package com.example.demo.bank.controller;
 
-class BankAccount {
-    int balance = 0; //예금 잔액
+import com.example.demo.bank.controller.BankAccountController;
+import com.example.demo.bank.domain.BankAccount;
 
-    /*private*/ int deposit (int amount){  //public : 접근제어자
-        balance += amount;
-        return balance;
-    }
-    public int withdraw(int amount){
-        balance -= amount;
-        return balance;
-    }
-    public int checkMyBalance(){
-        System.out.println("잔액 : " + balance);
-        return balance;
-    }
-}
-class BankAccount00 {
+public class BankAccountController {
     public static void main(String[] args) {
         //두개의 인스턴스 생성
         BankAccount yoon = new BankAccount();
