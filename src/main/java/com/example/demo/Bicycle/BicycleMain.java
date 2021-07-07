@@ -1,6 +1,5 @@
-package com.example.demo.dog;
+package com.example.demo.Bicycle;
 
-import java.util.PrimitiveIterator;
 import java.util.Scanner;
 
 class Bicycle{
