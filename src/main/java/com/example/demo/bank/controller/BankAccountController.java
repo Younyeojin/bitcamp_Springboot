@@ -1,7 +1,6 @@
 package com.example.demo.bank.controller;
 
-import com.example.demo.bank.BankAccount;
-import com.example.demo.bank.controller.BankAccountController;
+import com.example.demo.bank.domain.BankAccount;
 
 
 import java.util.Scanner;

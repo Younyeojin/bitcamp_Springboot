@@ -1,22 +1,34 @@
 package com.example.demo.bank.domain;
 
 public class BankAccount {
-
-        int balance = 0; //예금 잔액
-
-        /*private int deposit(int amount)*/
-        public int deposit(int amount) {  //public : 접근제어자
-            balance += amount;
-            return balance;
-        }
-
-        public int withdraw(int amount) {
-            balance -= amount;
-            return balance;
-        }
-
-        public int checkMyBalance() {
-            System.out.println("잔액 : " + balance);
-            return balance;
-        }
+    private int balance = 0;
+    private int amount;
+    private int deposit;
+    private int withdraw;
+    private int checkMyBalance;
+    public int getBalance(){
+        return this.balance;
     }
+    public void setBalance(int balance){
+        this.balance = balance;
+    }
+    public int getAmount(){
+        return this.amount;
+    }
+    public void setAmount(int amount){
+        this.amount = amount;
+    }
+    public int deposit(int amount) {  //입금을 담당하는 메소드
+        balance += amount;
+        return balance;
+    }
+    public int withdraw(int amount) {   //출금을 담당하는 메소드
+        balance -= amount;
+        return balance;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("잔액은 %d입니다.\n", balance);
+    }
+}
