@@ -2,7 +2,7 @@ package com.example.demo.Bicycle.domain;
 
 import java.util.Scanner;
 
-public class Bicycle{
+public class BicycleDTO {
     private int gear;
     private String company;
     private int speed;

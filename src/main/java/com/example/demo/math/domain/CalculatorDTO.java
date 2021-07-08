@@ -1,6 +1,6 @@
 package com.example.demo.math.domain;
 
-public class Calculator {
+public class CalculatorDTO {
     private int num1;
     private int num2;
     private String opcode;

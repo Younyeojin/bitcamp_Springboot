@@ -1,12 +1,12 @@
 package com.example.demo.math.controller;
 
-import com.example.demo.math.domain.Calculator;
+import com.example.demo.math.domain.CalculatorDTO;
 
 import java.util.Scanner;
 public class CalculatorController {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Calculator calculator = new Calculator();
+        CalculatorDTO calculator = new CalculatorDTO();
         System.out.println("숫자 1 ?");
         calculator.setNum1(scanner.nextInt());
         System.out.println("연산자");
