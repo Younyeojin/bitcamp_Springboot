@@ -9,5 +9,8 @@ public interface CalculatorService {
     int multiple(CalculatorDTO calculator);
     int divide(CalculatorDTO calculator);
     int remain(CalculatorDTO calculator);
-
+    int[] sequence(CalculatorDTO calculator);
+    //int[] sequence2(CalculatorDTO calculator);
+    //String [] blah();
+    //CalculatorDTO[] c1();
 }
