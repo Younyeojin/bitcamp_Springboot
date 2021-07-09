@@ -52,6 +52,7 @@ public class CalculatorController {
                 System.out.print(arr[i] + "\t");
             }
         }
+
     }
             //calculatorService1.sequence2(null);
 
