@@ -7,9 +7,17 @@ import com.example.demo.Bicycle.domain.BicycleDTO;
 import java.util.Scanner;
 
 public class BicycleController {
-    Scanner scanner = new Scanner(System.in);
-    BicycleDTO bicycle = new BicycleDTO();
+    private BicycleService bicycleService;
+    private Scanner scanner;
+
+    private BicycleDTO bicycle;
+    public BicycleController (){
+        this.bicycleService = new BicycleServiceImpl();
+        this.bicycle = new BicycleDTO();
+        this.scanner = new Scanner(System.in);
+    }
     public void bicycle(){
+        BicycleDTO bicycle  = new BicycleDTO();
         System.out.println("기어가 몇단인가요?");
         bicycle.setGear(scanner.nextInt());
         System.out.println("어디껀가요?");

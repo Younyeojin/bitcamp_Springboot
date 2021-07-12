@@ -3,12 +3,21 @@ package com.example.demo.dog.controller;
 
 
 import com.example.demo.dog.domain.DogDTO;
+import com.example.demo.dog.service.DogService;
+import com.example.demo.dog.service.DogServiceImpl;
 
 import java.util.Scanner;
 
 public class DogController {
-    Scanner scanner = new Scanner(System.in);
-    DogDTO dog = new DogDTO();   //dog:가상
+    private DogService dogService;
+    private DogDTO dog;
+    private Scanner scanner;
+    public DogController(){
+        this.dogService = new DogServiceImpl();
+        this.dog = new DogDTO();
+        this.scanner = new Scanner(System.in);
+    }
+      //DogDTO dog = new DogDTO();   //dog:가상
     public void dog(){
         System.out.println("이름이 뭔가요?");
         dog.setName(scanner.next());
