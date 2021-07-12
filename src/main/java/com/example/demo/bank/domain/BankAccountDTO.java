@@ -12,5 +12,5 @@ public class BankAccountDTO {
     private String date;
     private float interest;
     private int balance;
-
+    private boolean newAccount;
 }

@@ -5,8 +5,15 @@ import com.example.demo.bank.domain.BankAccountDTO;
 public class BankAccountServiceImpl implements BankAccountService {
     private BankAccountDTO bankAccount;
 
+    @Override
+    public String name(BankAccountDTO bankAccount) {
+        return null;
+    }
 
-
+    @Override
+    public boolean newAccount(BankAccountDTO bankAccount) {
+        return true;
+    }
 
     @Override
     public void createAccount(BankAccountDTO bank) {

@@ -14,10 +14,12 @@ import com.example.demo.bank.domain.BankAccountDTO;
  */
 public interface BankAccountService {
     void createAccount(BankAccountDTO bankAccount);
+    String name(BankAccountDTO bankAccount);
     int findBalance(BankAccountDTO bankAccount);
     int deposit(BankAccountDTO bankAccount);
     int withdraw(BankAccountDTO bankAccount);
     void dropAccount(BankAccountDTO bankAccount);
+    boolean newAccount(BankAccountDTO bankAccount);
     //int balance(BankAccountDTO bank);
 }
  /*

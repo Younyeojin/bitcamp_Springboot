@@ -10,17 +10,30 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class BankAccountController {
-    /*private BankAccountService bankAccountService;
+    private BankAccountService bankAccountService;
     private Scanner scanner;
-    private BankAccountDTO bankAccount;*/
-    public static void main(String[] args) {
+    private BankAccountDTO bankAccount;
+    public BankAccountController() {
+        this.bankAccountService = new BankAccountServiceImpl();
+        this.bankAccount = new BankAccountDTO();
+        this.scanner = new Scanner(System.in);
+    }
+    public void setBankAccount(){
+        BankAccountDTO bankAccount = new BankAccountDTO();
+        System.out.println("계좌를 생성하시겠습니까?");
+        switch (scanner.next()) {
+            case "y":
+                break;
+            case "n":
+                return;    }
+        System.out.println("이름 무엇?");
+        bankAccount.setName(scanner.next());
+        System.out.println("당신의 계좌는:");
         Random rand = new Random();
         //for (long l =0;  l<1; l++)
         //  System.out.println(String.format("%d - %d - %d",rand.nextInt(10000),rand.nextInt(10000),rand.nextInt(10000)));
             System.out.println(rand.nextInt(10000)+"-"+rand.nextInt(10000)+"-"+rand.nextInt(10000));
-        Scanner scanner = new Scanner(System.in);
-        BankAccountDTO bankAccount = new BankAccountDTO();
-        BankAccountService bankAccountService= new BankAccountServiceImpl();
+
         System.out.println("입금 얼마?");
         bankAccount.setMoney(scanner.nextInt());
         bankAccountService.deposit(bankAccount);

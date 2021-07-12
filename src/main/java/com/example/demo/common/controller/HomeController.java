@@ -1,6 +1,7 @@
 package com.example.demo.common.controller;
 
 import com.example.demo.Bicycle.controller.BicycleController;
+import com.example.demo.bank.controller.BankAccountController;
 import com.example.demo.dog.controller.DogController;
 import com.example.demo.math.controller.CalculatorController;
 import com.example.demo.util.controller.UtilController;
@@ -14,8 +15,8 @@ public class HomeController {
         DogController dogController = new DogController();
         BicycleController bicycleController = new BicycleController();
         UtilController utilController = new UtilController();
-        while (true) {
-            System.out.println("\n[메뉴] 0.종료 1.계산기 2.수열 3.강아지 4.자전거 5.오늘날짜");
+        BankAccountController bankAccountController = new BankAccountController();        while (true) {
+            System.out.println("\n[메뉴] 0.종료 1.계산기 2.수열 3.강아지 4.자전거 5.오늘날짜 6.은행");
             switch (scanner.next()) {
                 case "0":
                     return;
@@ -32,9 +33,11 @@ public class HomeController {
                     bicycleController.bicycle();
                 case "5":
                     utilController.getTodayAndCurrentTime();
-                    break;      }
-
-
+                    break;
+                case "6":
+                bankAccountController.setBankAccount();
+                    break;
+            }
         }
     }
 }
