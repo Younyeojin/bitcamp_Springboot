@@ -15,8 +15,8 @@ public class UtilServiceImpl implements UtilService {
 
     @Override
     public LocalTime currentTime() {
-        util.setNow(LocalTime.now());
-        return util.getNow();
+        util.setCurrentTime(LocalTime.now());
+        return util.getCurrentTime();
     }
 
     @Override

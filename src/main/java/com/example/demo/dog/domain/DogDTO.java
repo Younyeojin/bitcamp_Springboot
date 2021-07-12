@@ -1,8 +1,10 @@
 package com.example.demo.dog.domain;
 
 // state (name, color, breed, hungry) and behavior (barking, fetching, wagging tail)
-import java.util.Scanner;
+import lombok.Data;
 
+import java.util.Scanner;
+@Data
 public class DogDTO {
     private String name;
     private String breed;
@@ -11,7 +13,7 @@ public class DogDTO {
 
     //멤버함수
     //set (spoiler) get (consumer)
-    public void setName(String name){
+    /*public void setName(String name){
         this.name = name;
     }
     public String getName(){
@@ -35,7 +37,7 @@ public class DogDTO {
     public String getHungry(){
          //if
         return this.hungry;
-    }
+    }*/
 
     @Override
     public String toString() {

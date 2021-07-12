@@ -1,22 +1,11 @@
 package com.example.demo.util.domain;
 
+import lombok.Data;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
-
+@Data    //밑에 getter,setter가 들어가있음
 public class UtilDTO {
     private LocalDate today;
     private LocalTime currentTime;
-
-    public void setToday(LocalDate today){
-        this.today = today;
-    }
-    public LocalDate getToday(){
-        return this.today;
-    }
-    public void setNow(LocalTime now){
-        this.currentTime = now;
-    }
-    public LocalTime getNow(){
-        return this.currentTime;
-    }
 }

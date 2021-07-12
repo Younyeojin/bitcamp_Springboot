@@ -1,5 +1,7 @@
 package com.example.demo.bank.domain;
 
+import com.sun.istack.internal.Pool;
+
 public class BankAccountDTO {
     private String name;
     private String accountNumber;
@@ -8,34 +10,40 @@ public class BankAccountDTO {
     private String date;
     private float interest;
 
-    private int balance = 0;
-    private int amount;
-    private int deposit;
-    private int withdraw;
-    private int checkMyBalance;
-    public int getBalance(){
-        return this.balance;
+    public void setName(String name){
+        this.name = name;
     }
-    public void setBalance(int balance){
-        this.balance = balance;
+    public String getName(){
+        return this.name;
     }
-    public int getAmount(){
-        return this.amount;
+    public void setAccountNumber(String accountNumber){
+        this.accountNumber = accountNumber;
     }
-    public void setAmount(int amount){
-        this.amount = amount;
+    public String getAccountNumber(){
+        return this.accountNumber;
     }
-    public int deposit(int amount) {  //입금을 담당하는 메소드
-        balance += amount;
-        return balance;
+    public void setMoney(int money){
+        this.money = money;
     }
-    public int withdraw(int amount) {   //출금을 담당하는 메소드
-        balance -= amount;
-        return balance;
+    public int getMoney(){
+        return this.money;
     }
-
-    @Override
-    public String toString() {
-        return String.format("잔액은 %d입니다.\n", balance);
+    public void setBankName(String name){
+        this.name = name;
+    }
+    public String getBankName(){
+        return this.name;
+    }
+    public void setDate(String date){
+        this.date = date;
+    }
+    public String getDate(){
+        return this.date;
+    }
+    public void setInterest(float interest){
+        this.interest = interest;
+    }
+    public float getInterest(){
+        return this.interest;
     }
 }
