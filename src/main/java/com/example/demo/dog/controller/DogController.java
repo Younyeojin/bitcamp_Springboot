@@ -9,11 +9,11 @@ import com.example.demo.dog.service.DogServiceImpl;
 import java.util.Scanner;
 
 public class DogController {
-    private DogService dogService;
+    //private DogService dogService;
     private DogDTO dog;
     private Scanner scanner;
     public DogController(){
-        this.dogService = new DogServiceImpl();
+       // this.dogService = new DogServiceImpl();
         this.dog = new DogDTO();
         this.scanner = new Scanner(System.in);
     }

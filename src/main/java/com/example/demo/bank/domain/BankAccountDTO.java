@@ -11,5 +11,6 @@ public class BankAccountDTO {
     public static final String BANK_NAME = "비트은행";
     private String date;
     private float interest;
+    private int balance;
 
 }
