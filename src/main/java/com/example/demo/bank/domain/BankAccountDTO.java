@@ -1,6 +1,13 @@
 package com.example.demo.bank.domain;
 
 public class BankAccountDTO {
+    private String name;
+    private String accountNumber;
+    private int money;
+    private String bankName;
+    private String date;
+    private float interest;
+
     private int balance = 0;
     private int amount;
     private int deposit;
