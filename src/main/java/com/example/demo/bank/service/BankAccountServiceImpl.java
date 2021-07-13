@@ -1,9 +1,15 @@
 package com.example.demo.bank.service;
 
 import com.example.demo.bank.domain.BankAccountDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class BankAccountServiceImpl implements BankAccountService {
+    @Autowired //생성자랑 이어줌
     private BankAccountDTO bankAccount;
+    /*public BankAccountServiceImpl(){
+        bankAccount = new BankAccountDTO();
+    }*/
+    @Autowired private BankAccountDTO[] bankAccounts;
 
     @Override
     public String name(BankAccountDTO bankAccount) {

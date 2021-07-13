@@ -6,11 +6,10 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class UtilServiceImpl implements UtilService {
-    UtilDTO util = new UtilDTO();
+    //UtilDTO util = new UtilDTO();
     //public final static UtilDTO util = new UtilDTO();  원래는 상수였다!
-    /*private UtilDTO util;  -초기화
-      public UtilServiceImpl(){ this.util = new UtilDTO();}
-    */
+    private UtilDTO util;  //초기화
+    public UtilServiceImpl(){ util = new UtilDTO();}
 
     @Override
     public LocalDate today() {

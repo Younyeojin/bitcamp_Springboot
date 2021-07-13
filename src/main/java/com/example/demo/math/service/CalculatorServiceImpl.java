@@ -5,6 +5,7 @@ import com.example.demo.math.domain.CalculatorDTO;
 import java.util.Scanner;
 
 public class CalculatorServiceImpl implements CalculatorService {
+
     @Override
     public int add(CalculatorDTO calculator) {
         return calculator.getNum1() + calculator.getNum2();

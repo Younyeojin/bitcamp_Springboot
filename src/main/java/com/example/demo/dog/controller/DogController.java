@@ -5,11 +5,69 @@ package com.example.demo.dog.controller;
 import com.example.demo.dog.domain.DogDTO;
 import com.example.demo.dog.service.DogService;
 import com.example.demo.dog.service.DogServiceImpl;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class DogController {
-    //private DogService dogService;
+    private DogService dogService;
+    public DogController() {
+        dogService = new DogServiceImpl();
+    }
+    public  void add(DogDTO dog) {
+        dogService.add(dog);
+    }
+    public void show() {
+        System.out.println("강아지의 수 : "+ dogService.count());
+        System.out.println(dogService.show());
+    }
+    public int count(){
+        return dogService.count();
+    }
+    public String barking(String bark) {
+        return dogService.barking(bark);
+    }
+
+
+    public String fetching(String target) {
+        return dogService.fetching(target);
+    }
+
+
+    public String waggingTail() {
+        return dogService.waggingTail();
+    }
+}
+        /*DogService dogService = new DogService() {
+            @Override
+            public String barking(String bark) {
+                return null;
+            }
+
+            @Override
+            public String fetching(String target) {
+                return null;
+            }
+
+            @Override
+            public String waggingTail() {
+                return null;
+            }
+        }
+    }
+    public void addDog(DogDTO dog){
+        dogs.add(dog); //추가한다
+    }
+
+    public void showDogs(){
+        System.out.println(dogs);
+    }
+
+
+    /*private DogService dogService;
     private DogDTO dog;
     private Scanner scanner;
     public DogController(){
@@ -28,7 +86,7 @@ public class DogController {
         System.out.println("배고픈가요?");
         dog.setHungry(scanner.next());
         System.out.print(dog.toString());
-    }
+    }*/
 
 
 
@@ -48,5 +106,5 @@ public class DogController {
         //System.out.printf("이름은 %s이고, 품종은 %s이고, 색깔은 %s이고, 배고픔은 %s니다",name,breed,color,hungry);
         System.out.print(dog.toString());
     }*/
-    }
+
 

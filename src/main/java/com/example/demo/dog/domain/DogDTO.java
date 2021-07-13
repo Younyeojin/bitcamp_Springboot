@@ -9,7 +9,14 @@ public class DogDTO {
     private String name;
     private String breed;
     private String color;
-    private String hungry;
+
+    @Override
+    public String toString() {
+        //return String.format("이름은 %s이고, 품종은 %s이고, 색깔은 %s이고, 배고픔은 %s니다",name,breed,color,hungry);
+        return String.format("이름은 %s이고, 품종은 %s이고, 색깔은 %s인 강아지가 ",name,breed,color);
+
+    }
+}
 
     //멤버함수
     //set (spoiler) get (consumer)
@@ -39,10 +46,4 @@ public class DogDTO {
         return this.hungry;
     }*/
 
-    @Override
-    public String toString() {
-        //return String.format("이름은 %s이고, 품종은 %s이고, 색깔은 %s이고, 배고픔은 %s니다",name,breed,color,hungry);
-        return String.format("이름은 %s이고, 품종은 %s이고, 색깔은 %s이고, 배고픔은 %s니다",this.name,this.breed,this.color,this.hungry);
 
-    }
-}
