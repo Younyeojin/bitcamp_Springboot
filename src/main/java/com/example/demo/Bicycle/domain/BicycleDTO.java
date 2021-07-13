@@ -1,12 +1,14 @@
 package com.example.demo.Bicycle.domain;
 
-import java.util.Scanner;
+import lombok.Data;
 
+import java.util.Scanner;
+@Data
 public class BicycleDTO {
     private int gear;
     private String company;
     private int speed;
-    public void setGear(int gear){
+   /* public void setGear(int gear){
         this.gear = gear;
     }
     public int getGear(){
@@ -24,9 +26,9 @@ public class BicycleDTO {
     public int getSpeed(){
         return this.speed;
     }
-
+*/
     @Override
     public String toString() {
-        return String.format("기어는 %d이고, %s꺼 이고, 속도는 %d입니다",gear,company,speed);
+        return String.format("자전거의 기어는 %d이고, %s꺼 이고, 속도는 %dKm 입니다",gear,company,speed);
     }
 }

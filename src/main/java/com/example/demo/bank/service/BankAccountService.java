@@ -2,6 +2,9 @@ package com.example.demo.bank.service;
 
 import com.example.demo.Bicycle.domain.BicycleDTO;
 import com.example.demo.bank.domain.BankAccountDTO;
+import lombok.Data;
+
+import java.util.List;
 
 /*
 은행이름은 상수로 정한다
@@ -12,31 +15,18 @@ import com.example.demo.bank.domain.BankAccountDTO;
 
 이름, 계좌번호를 입력하면 계좌가 상실된다
  */
+
 public interface BankAccountService {
-    void createAccount(BankAccountDTO bankAccount);
-    String name(BankAccountDTO bankAccount);
-    int findBalance(BankAccountDTO bankAccount);
+    void add(BankAccountDTO bankAccount);
+    int count();
+    List<BankAccountDTO> show();
+
+    String createAccount(BankAccountDTO bankAccount);
+    String name(String name);
+    int finBalance(int balance);
     int deposit(BankAccountDTO bankAccount);
     int withdraw(BankAccountDTO bankAccount);
-    void dropAccount(BankAccountDTO bankAccount);
-    boolean newAccount(BankAccountDTO bankAccount);
-    //int balance(BankAccountDTO bank);
+    void dropAccount();
+
 }
- /*
-    * private int balance = 0;
-    private int amount;
-    private int deposit;
-    private int withdraw;
-    private int checkMyBalance;
-    public int getBalance(){return this.balance;}
-    public void setBalance(int balance){this.balance = balance;}
-    public int getAmount(){return this.amount;}
-    public void setAmount(int amount){this.amount = amount;}
-    public int deposit(int amount) {  //입금을 담당하는 메소드
-        balance += amount;
-        return balance;}
-    public int withdraw(int amount) {   //출금을 담당하는 메소드
-        balance -= amount;
-        return balance;}
-    @Override
-    public String toString() {return String.format("잔액은 %d입니다.\n", balance);}*/
+

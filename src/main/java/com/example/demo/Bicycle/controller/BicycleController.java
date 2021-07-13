@@ -8,15 +8,20 @@ import java.util.Scanner;
 
 public class BicycleController {
     private BicycleService bicycleService;
-    private Scanner scanner;
-
-    private BicycleDTO bicycle;
-    public BicycleController (){
-        this.bicycleService = new BicycleServiceImpl();
-        this.bicycle = new BicycleDTO();
-        this.scanner = new Scanner(System.in);
+    public BicycleController(){
+        bicycleService = new BicycleServiceImpl();
     }
-    public void bicycle(){
+    public void add(BicycleDTO bicycle){
+        bicycleService.add(bicycle);
+    }
+    public void show(){
+        System.out.println("자전거의 수 : " + bicycleService.count());
+        System.out.println(bicycleService.show());
+    }
+    public int count(){
+        return bicycleService.count();
+    }
+    /*public void bicycle(){
         BicycleDTO bicycle  = new BicycleDTO();
         System.out.println("기어가 몇단인가요?");
         bicycle.setGear(scanner.nextInt());
@@ -27,4 +32,5 @@ public class BicycleController {
         //System.out.printf("기어는 %d이고, %s꺼 이고, 속도는 %d입니다",bicycle.getGear(),bicycle.getCompany(),bicycle.getSpeed());
         System.out.print(bicycle.toString());
     }
+         */
 }

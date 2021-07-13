@@ -13,4 +13,8 @@ public class BankAccountDTO {
     private int balance;
     private boolean newAccount;
     public static final String BANK_NAME = "비트은행";
+    @Override
+    public String toString() {
+        return String.format("%d - %d - %d",accountNumber,accountNumber,accountNumber);
+    }
 }

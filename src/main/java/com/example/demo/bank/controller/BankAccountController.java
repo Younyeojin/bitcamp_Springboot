@@ -14,51 +14,23 @@ public class BankAccountController {
     private Scanner scanner;
     private BankAccountDTO bankAccount;
     public BankAccountController() {
-        this.bankAccountService = new BankAccountServiceImpl();
-        this.bankAccount = new BankAccountDTO();
-        this.scanner = new Scanner(System.in);
+       bankAccountService = new BankAccountServiceImpl();
+       bankAccount = new BankAccountDTO();
+       scanner = new Scanner(System.in);
     }
-    public void setBankAccount(){
-        BankAccountDTO bankAccount = new BankAccountDTO();
-        System.out.println("계좌를 생성하시겠습니까?");
-        switch (scanner.next()) {
-            case "y":
-                break;
-            case "n":
-                return;    }
-        System.out.println("이름 무엇?");
-        bankAccount.setName(scanner.next());
-        System.out.println("당신의 계좌는:");
-        Random rand = new Random();
-        //for (long l =0;  l<1; l++)
-        //  System.out.println(String.format("%d - %d - %d",rand.nextInt(10000),rand.nextInt(10000),rand.nextInt(10000)));
-            System.out.println(rand.nextInt(10000)+"-"+rand.nextInt(10000)+"-"+rand.nextInt(10000));
-
-        System.out.println("입금 얼마?");
-        bankAccount.setMoney(scanner.nextInt());
+    public void create(BankAccountDTO bankAccount){
+        bankAccountService.createAccount(bankAccount);
+    }
+    public void add(BankAccountDTO bankAccount){
+        bankAccountService.add(bankAccount);
+    }
+    public void show(BankAccountDTO bankAccount){
+        System.out.println(bankAccountService.show());
+    }
+    public void deposit(BankAccountDTO bankAccount){
         bankAccountService.deposit(bankAccount);
-        System.out.println("출금 얼마?");
-        bankAccount.setMoney(scanner.nextInt());
+    }
+    public void withdraw(BankAccountDTO bankAccount){
         bankAccountService.withdraw(bankAccount);
-        System.out.println("잔액 얼마?");
-        System.out.println(bankAccount.getBalance());
-
-
-        //두개의 인스턴스 생성
-        //BankAccountDTO yoon = new BankAccountDTO();
-        //BankAccountDTO park = new BankAccountDTO();
-        //System.out.println("얼마를 입금하시겠습니까?");
-
-        /*yoon.setAmount(scanner.nextInt());
-        park.setAmount(scanner.nextInt());
-        yoon.deposit(yoon.getAmount());
-        park.deposit(park.getAmount());
-        System.out.println("얼마를 출금하시겠습니까?");
-        yoon.setAmount(scanner.nextInt());
-        park.setAmount(scanner.nextInt());
-        yoon.withdraw(yoon.getAmount());
-        park.withdraw(park.getAmount());
-        System.out.print(yoon.toString());
-        System.out.print(park.toString());*/
     }
 }
