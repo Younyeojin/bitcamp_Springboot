@@ -23,7 +23,7 @@ public class HomeController {
         BicycleController bicycleController = new BicycleController();
         BankAccountController bankAccountController = new BankAccountController();
         while (true) {
-            System.out.println("\n[메뉴] 0.종료 1.계산기 2.수열 3.강아지 33.개목록 4.자전거 44.자전거목록 5.오늘날짜 6.은행");
+            System.out.println("\n[메뉴] 0.종료 1.계산기 2.수열 3.강아지 33.개목록 4.자전거 44.자전거목록 5.오늘날짜 6.비트은행");
             BankAccountDTO bankAccount = new BankAccountDTO();
 
             switch (scanner.next()) {
@@ -58,8 +58,13 @@ public class HomeController {
                     bicycleController.show();
                     break;
                 case "5": new UtilController().getTodayAndCurrentTime(); break;
-                case "6":
-                    System.out.println("계좌를 생성하시겠습니까?");
+                case "6": new BankAccountController().main(); break;
+
+            }
+        }
+    }
+}
+                    /*System.out.println("계좌를 생성하시겠습니까?");
                     switch (scanner.next()) {
                         case "y":
                             break;
@@ -81,8 +86,4 @@ public class HomeController {
                     break;
                 case "66":
                     bankAccountController.show(bankAccount);
-                    break;
-            }
-        }
-    }
-}
+                    break;*/

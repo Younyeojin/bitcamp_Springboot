@@ -8,8 +8,8 @@ import java.util.List;
 public interface DogService {          //인터페이스 : 자바 클래스 밖에 있는 함수
     void add(DogDTO dog); //컬랙션
     int count();
-    List<DogDTO> show();
-
+    // List<DogDTO> show();
+    List<?> show();
     String barking(String bark);  //요구사항
     String fetching(String target);
     String waggingTail();

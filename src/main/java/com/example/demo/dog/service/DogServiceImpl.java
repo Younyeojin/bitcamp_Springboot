@@ -10,26 +10,28 @@ import java.util.List;
 
 public class DogServiceImpl implements DogService {
     private DogDTO dog;
-    private ArrayList<DogDTO> dogs;
+    private List<DogDTO> dogs; //추상화
     public DogServiceImpl(){
         dog = new DogDTO();
         dogs = new ArrayList<>();
-    }
+    }   //캡슐화
 
     @Override
-    public int count() {
-        return dogs.size();
-    }
+    public int count() { return dogs.size(); }
 
-    @Override
+    /*@Override
     public List<DogDTO> show() {
         return dogs;
+    }*/
+    @Override
+    public List<?> show() {
+        return dogs;
     }
-
     @Override
     public void add(DogDTO dog) {
         dogs.add(dog) ;
     }
+
     @Override
     public String barking(String bark) {
         return dog.toString() + bark + " 짖는다";

@@ -13,7 +13,7 @@ public class DogDTO {
     @Override
     public String toString() {
         //return String.format("이름은 %s이고, 품종은 %s이고, 색깔은 %s이고, 배고픔은 %s니다",name,breed,color,hungry);
-        return String.format("강아지의 이름은 %s이고, 품종은 %s이며, 색깔은 %s인 강아지가 ",name,breed,color);
+        return String.format("강아지의 이름은 %s이고, 품종은 %s이며, 색깔은 %s인 강아지 ",name,breed,color);
 
     }
 }

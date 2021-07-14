@@ -1,6 +1,7 @@
 package com.example.demo.bank.service;
 
 import com.example.demo.bank.domain.BankAccountDTO;
+import com.example.demo.util.service.UtilServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ import java.util.Random;
 
 public class BankAccountServiceImpl implements BankAccountService {
     private BankAccountDTO bankAccount;
-    private ArrayList<BankAccountDTO> bankAccounts;
+    private List<BankAccountDTO> bankAccounts;
     public BankAccountServiceImpl(){
         bankAccount = new BankAccountDTO();
         bankAccounts = new ArrayList<>();
@@ -25,17 +26,25 @@ public class BankAccountServiceImpl implements BankAccountService {
     }
 
     @Override
-    public List<BankAccountDTO> show() {
+    public List<?> findAll() {
         return bankAccounts;
     }
 
+
     @Override
-    public String  createAccount(BankAccountDTO bankAccount) {
-        Random random = new Random();
+    public void  createAccount(BankAccountDTO bank) {
+        UtilService utilService = new UtilServiceImpl();
+        String first = utilService.randomNumbers(4);
+        if(){}
+        String accountNumber = first+"-"+
+                utilService.randomNumbers(4)+"-"
+        bank.setAccountNumber("");
+        bankAccounts.add(bank);
+            }
+        /*Random random = new Random();
         String randomNumber = String.format("%d-%d-%d",random.nextInt(1000),random.nextInt(1000),random.nextInt(1000));
         bankAccount.setAccountNumber(randomNumber);
-        return bankAccount.getAccountNumber();
-    }
+        return bankAccount.getAccountNumber();*/
 
     @Override
     public String name(String name) {

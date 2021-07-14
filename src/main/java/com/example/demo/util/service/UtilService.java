@@ -7,4 +7,5 @@ public interface UtilService {
      LocalDate today();
      LocalTime currentTime();
      String todayAndCurrentTime();
+     String randomNumbers(int digits);
 }
