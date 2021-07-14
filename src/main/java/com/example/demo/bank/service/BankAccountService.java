@@ -20,7 +20,7 @@ public interface BankAccountService {
     void add(BankAccountDTO bankAccount);
     int count();
     List<?> findAll();
-
+    String [] findAllAccountNumbers();
     void createAccount(BankAccountDTO bankAccount);
     String name(String name);
     int finBalance(int balance);

@@ -3,7 +3,7 @@ package com.example.demo.bank.service;
 import com.example.demo.bank.domain.BankAccountDTO;
 import com.example.demo.util.service.UtilServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-
+import com.example.demo.util.service.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -32,13 +32,21 @@ public class BankAccountServiceImpl implements BankAccountService {
 
 
     @Override
+    public String[] findAllAccountNumbers() {
+        String[] sr = new String[count()];
+        for (int i=0; i<count(); i++){
+            sr[i] = bankAccounts.get(i).getAccountNumber();
+        }
+        return sr;
+    }
+
+    @Override
     public void  createAccount(BankAccountDTO bank) {
         UtilService utilService = new UtilServiceImpl();
-        String first = utilService.randomNumbers(4);
-        if(){}
-        String accountNumber = first+"-"+
-                utilService.randomNumbers(4)+"-"
-        bank.setAccountNumber("");
+        String accountNumber = utilService.randomNumbers(4 ,false)+"-"+
+                utilService.randomNumbers(4, true)+"-"+
+                utilService.randomNumbers(4, true);
+        bank.setAccountNumber(accountNumber);
         bankAccounts.add(bank);
             }
         /*Random random = new Random();

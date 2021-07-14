@@ -19,7 +19,7 @@ public class BankAccountController {
         Scanner scanner = new Scanner(System.in);
         BankAccountDTO account = null;
         while (true){
-            System.out.println("[Menu] 0-Exit 1-계좌개설");
+            System.out.println("[Menu] 0-Exit 1-계좌개설 2-계좌목록");
             switch (scanner.next()){
                 case "0":return;
                 case "1":
@@ -29,7 +29,7 @@ public class BankAccountController {
                     bankAccountService.createAccount(account);
                     break;
                 case "2":
-                    System.out.println("개설된 계좌번호 : "+bankAccountService.count());
+                    System.out.println("개설된 계좌 수 : "+bankAccountService.count());
                     System.out.println(bankAccountService.findAll());
                     //System.out.println(UtilService.);
                     break;
