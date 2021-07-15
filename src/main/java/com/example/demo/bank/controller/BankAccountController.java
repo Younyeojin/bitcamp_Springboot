@@ -43,7 +43,7 @@ public class BankAccountController {
                     account = new BankAccountDTO();
                     account.setAccountNumber(scanner.next());
                     System.out.println("입금액 : [    ]");
-                    account.setMoney(scanner.nextInt());
+                    account.setMoney(scanner.next());
 
                 case "5":
                 case "6":

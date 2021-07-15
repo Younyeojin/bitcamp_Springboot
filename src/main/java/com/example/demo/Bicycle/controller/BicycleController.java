@@ -8,13 +8,19 @@ import java.util.Scanner;
 
 public class BicycleController {
     private BicycleService bicycleService;
-    private BicycleDTO bicycle;
-    private Scanner scanner;
+    //private BicycleDTO bicycle;
+    //private Scanner scanner;
     public BicycleController(){
+    bicycleService = new BicycleServiceImpl();
+}
+    public void add(BicycleDTO bicycle){
+        bicycleService.add(bicycle);
+    }
+    /*public BicycleController(){
         this.bicycleService=new BicycleServiceImpl();
         this.bicycle=new BicycleDTO();
         this.scanner=new Scanner(System.in);
-            }
+            }*/
 
     public void show(){
         System.out.println("자전거의 수 : " + bicycleService.count());

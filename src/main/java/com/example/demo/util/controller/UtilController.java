@@ -4,12 +4,19 @@ import com.example.demo.util.domain.UtilDTO;
 import com.example.demo.util.service.UtilService;
 import com.example.demo.util.service.UtilServiceImpl;
 
+import java.util.Scanner;
+
 public class UtilController {
     private UtilService utilService;
     public UtilController(){
         this.utilService = new UtilServiceImpl();
     }
-    public void getTodayAndCurrentTime(){
+    public void todayAndCurrentTime(){
+        Scanner scanner = new Scanner(System.in);
+        while (true){
+
+        }
+
         System.out.println(utilService.todayAndCurrentTime());
     }    }
 
