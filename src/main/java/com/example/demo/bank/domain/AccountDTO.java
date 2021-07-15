@@ -4,7 +4,7 @@ import com.sun.istack.internal.Pool;
 import lombok.Data;
 
 @Data
-public class BankAccountDTO {
+public class AccountDTO {
     private String name;
     private String accountNumber;
     private String money;
@@ -12,7 +12,7 @@ public class BankAccountDTO {
     private String interest;
     private String balance;
     //private boolean newAccount;
-    public static final String BANK_NAME = "비트은행";
+    public static final String BANK_NAME = "\n비트은행";
     @Override
     public String toString() {
         return BANK_NAME+

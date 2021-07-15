@@ -3,31 +3,39 @@ package com.example.demo.Bicycle.controller;
 import com.example.demo.Bicycle.Service.BicycleService;
 import com.example.demo.Bicycle.Service.BicycleServiceImpl;
 import com.example.demo.Bicycle.domain.BicycleDTO;
+import com.example.demo.util.service.LambdaUtils;
 
 import java.util.Scanner;
 
-public class BicycleController {
+public class BicycleController extends LambdaUtils {
     private BicycleService bicycleService;
-    //private BicycleDTO bicycle;
-    //private Scanner scanner;
+    private BicycleDTO bicycle;
+    private Scanner scanner;
+
+    //public void add(BicycleDTO bicycle){bicycleService.add(bicycle);   }
     public BicycleController(){
-    bicycleService = new BicycleServiceImpl();
-}
-    public void add(BicycleDTO bicycle){
-        bicycleService.add(bicycle);
-    }
-    /*public BicycleController(){
         this.bicycleService=new BicycleServiceImpl();
         this.bicycle=new BicycleDTO();
         this.scanner=new Scanner(System.in);
-            }*/
+            }
 
     public void show(){
-        System.out.println("자전거의 수 : " + bicycleService.count());
+        print.accept("자전거의 수 : " + bicycleService.count());
         System.out.println(bicycleService.show());
     }
     public int count(){
         return bicycleService.count();
+    }
+
+    public void main() {
+        BicycleDTO bicycle  = new BicycleDTO();
+        print.accept("기어가 몇단인가요?\n");
+        bicycle.setGear(scanner.nextInt());
+        print.accept("어디껀가요?\n");
+        bicycle.setCompany(scanner.next());
+        print.accept("속도가 어떻게 되나요?\n");
+        bicycle.setSpeed(scanner.nextInt());
+        print.accept(bicycle.toString());
     }
     /*
     public void add(BicycleDTO bicycle){

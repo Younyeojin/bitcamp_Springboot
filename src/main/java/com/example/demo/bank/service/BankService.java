@@ -1,8 +1,6 @@
 package com.example.demo.bank.service;
 
-import com.example.demo.Bicycle.domain.BicycleDTO;
-import com.example.demo.bank.domain.BankAccountDTO;
-import lombok.Data;
+import com.example.demo.bank.domain.AccountDTO;
 
 import java.util.List;
 
@@ -16,15 +14,15 @@ import java.util.List;
 이름, 계좌번호를 입력하면 계좌가 상실된다
  */
 
-public interface BankAccountService {
-    void createAccount(BankAccountDTO bankAccount);
+public interface BankService {
+    void createAccount(AccountDTO bank);
     String  count();
-    List<?> findAll();
+    List<? extends AccountDTO> findAll();
     String [] findAllAccountNumbers();
-    String finBalance(BankAccountDTO bankAccount);
-    String deposit(BankAccountDTO bankAccount);
-    String withdraw(BankAccountDTO bankAccount);
-    void dropAccount(BankAccountDTO bankAccount);
+    String finBalance(AccountDTO bank);
+    String deposit(AccountDTO bank);
+    String withdraw(AccountDTO bank);
+    void dropAccount(AccountDTO bank);
 
 
 }

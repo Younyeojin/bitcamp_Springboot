@@ -15,7 +15,7 @@ public class UtilServiceImpl implements UtilService {
     public String randomNumbers(int digits,boolean allowZeroValue) {
         String first = "", result = "";
         first += allowZeroValue ? ((int)(Math.random()* 10)):((int)(Math.random()*9+1));
-        for (int i=0; i<digits; i++){
+        for (int i=0; i<digits-1; i++){
             result += (int)(Math.random()*10); //->0012 같은 숫자가 나왔을때를 대비한 식
         }
         return first+result;

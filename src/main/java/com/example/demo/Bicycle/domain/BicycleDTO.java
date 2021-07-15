@@ -29,6 +29,6 @@ public class BicycleDTO {
 */
     @Override
     public String toString() {
-        return String.format("자전거의 기어는 %d이고, %s꺼 이고, 속도는 %dKm 입니다",gear,company,speed);
+        return String.format("자전거의 기어는 %d이고, %s꺼 이며, 속도는 %dKm 입니다",gear,company,speed);
     }
 }
