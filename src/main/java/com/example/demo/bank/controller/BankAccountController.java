@@ -17,14 +17,15 @@ public class BankAccountController {
     }
     public void main(){
         Scanner scanner = new Scanner(System.in);
-        BankAccountDTO account = null;
+        //BankAccountDTO account = new BankAccountDTO(); -> 이렇게되면 쓰레기는 계속 쌓이게되서 숫자가 중복으로 나옴
+         BankAccountDTO account = null;
         while (true){
             System.out.println("[Menu] 0-Exit 1-계좌개설 2-계좌목록 3-계좌번호목록");
             switch (scanner.next()){
                 case "0":return;
                 case "1":
                     account = new BankAccountDTO();
-                    System.out.println("이름 : [      ]");
+                    System.out.println("이름 : [    ]");
                     account.setName(scanner.next());
                     bankAccountService.createAccount(account);
                     break;
@@ -37,7 +38,15 @@ public class BankAccountController {
                     for (String s:bankAccountService.findAllAccountNumbers()){
                         System.out.println(s+"\n");
                     }
+                case "4":
+                    System.out.println("계좌번호 : [    ]");
+                    account = new BankAccountDTO();
+                    account.setAccountNumber(scanner.next());
+                    System.out.println("입금액 : [    ]");
+                    account.setMoney(scanner.nextInt());
 
+                case "5":
+                case "6":
             }
         }
     }

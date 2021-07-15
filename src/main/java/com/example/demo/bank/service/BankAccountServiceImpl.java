@@ -8,38 +8,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class BankAccountServiceImpl implements BankAccountService {
-    private BankAccountDTO bankAccount;
-    private List<BankAccountDTO> bankAccounts;
-    public BankAccountServiceImpl(){
-        bankAccount = new BankAccountDTO();
-        bankAccounts = new ArrayList<>();
-    }
+public class BankAccountServiceImpl extends LambdaUtils implements BankAccountService {
+    private final BankAccountDTO bankAccount;
+    private final List<BankAccountDTO> bankAccounts;
     @Override
-    public void add(BankAccountDTO bankAccount) {
-        bankAccounts.add(bankAccount);
+    public String count() {
+        return string.apply(bankAccounts.size());
     }
-
-    @Override
-    public int count() {
-        return bankAccounts.size();
-    }
-
     @Override
     public List<?> findAll() {
         return bankAccounts;
     }
-
-
-    @Override
-    public String[] findAllAccountNumbers() {
-        String[] sr = new String[count()];
-        for (int i=0; i<count(); i++){
-            sr[i] = bankAccounts.get(i).getAccountNumber();
-        }
-        return sr;
+    public BankAccountServiceImpl(){
+        bankAccount = new BankAccountDTO();
+        bankAccounts = new ArrayList<>();
     }
-
     @Override
     public void  createAccount(BankAccountDTO bank) {
         UtilService utilService = new UtilServiceImpl();
@@ -48,36 +31,52 @@ public class BankAccountServiceImpl implements BankAccountService {
                 utilService.randomNumbers(4, true);
         bank.setAccountNumber(accountNumber);
         bankAccounts.add(bank);
-            }
+    }
+    @Override
+    public String[] findAllAccountNumbers() {
+        int count = strToInt.apply(count());
+        String[] accountNumbers = new String[count];
+        for (int i=0; i<count; i++){
+            accountNumbers[i] = bankAccounts.get(i).getAccountNumber();
+        }
+        return accountNumbers;
+    }
+    @Override
+    public String  finBalance(BankAccountDTO bankAccount) {
+        return bankAccount.getMoney();
+    }
+    @Override
+    public String deposit(BankAccountDTO bankAccount) {
+        int restMoney = strToInt.apply(bankAccount.getMoney());
+        bankAccount.setMoney(restMoney+ bankAccount.getMoney());
+        return bankAccount.getMoney();    }
+    @Override
+    public String withdraw(BankAccountDTO bankAccount) {return ""; }
+    @Override
+    public void dropAccount(BankAccountDTO bankAccount) {
+
+    }
+
+
+
+
+
+
+
+
         /*Random random = new Random();
         String randomNumber = String.format("%d-%d-%d",random.nextInt(1000),random.nextInt(1000),random.nextInt(1000));
         bankAccount.setAccountNumber(randomNumber);
         return bankAccount.getAccountNumber();*/
 
-    @Override
-    public String name(String name) {
-        return null;
-    }
 
-    @Override
-    public int finBalance(int balance) {
-        return bankAccount.getMoney();
-    }
 
-    @Override
-    public int deposit(BankAccountDTO bankAccount) {
-        bankAccount.setBalance(bankAccount.getBalance()+ bankAccount.getMoney());
-        return bankAccount.getBalance();    }
 
-    @Override
-    public int withdraw(BankAccountDTO bankAccount) {
-        bankAccount.setBalance(bankAccount.getBalance()- bankAccount.getMoney());
-        return bankAccount.getBalance();    }
 
-    @Override
-    public void dropAccount() {
 
-    }
+
+
+
 
 
 

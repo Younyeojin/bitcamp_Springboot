@@ -7,11 +7,11 @@ import lombok.Data;
 public class BankAccountDTO {
     private String name;
     private String accountNumber;
-    private int money;
+    private String money;
     private String date;
-    private float interest;
-    private int balance;
-    private boolean newAccount;
+    private String interest;
+    private String balance;
+    //private boolean newAccount;
     public static final String BANK_NAME = "비트은행";
     @Override
     public String toString() {

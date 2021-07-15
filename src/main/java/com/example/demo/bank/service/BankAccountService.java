@@ -17,16 +17,15 @@ import java.util.List;
  */
 
 public interface BankAccountService {
-    void add(BankAccountDTO bankAccount);
-    int count();
+    void createAccount(BankAccountDTO bankAccount);
+    String  count();
     List<?> findAll();
     String [] findAllAccountNumbers();
-    void createAccount(BankAccountDTO bankAccount);
-    String name(String name);
-    int finBalance(int balance);
-    int deposit(BankAccountDTO bankAccount);
-    int withdraw(BankAccountDTO bankAccount);
-    void dropAccount();
+    String finBalance(BankAccountDTO bankAccount);
+    String deposit(BankAccountDTO bankAccount);
+    String withdraw(BankAccountDTO bankAccount);
+    void dropAccount(BankAccountDTO bankAccount);
+
 
 }
 

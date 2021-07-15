@@ -10,6 +10,9 @@ public interface DogService {          //인터페이스 : 자바 클래스 밖�
     int count();
     // List<DogDTO> show();
     List<?> show();
+    void createDogName(DogDTO dog);
+    void createDogBreed(DogDTO dog);
+    void createDogColor(DogDTO dog);
     String barking(String bark);  //요구사항
     String fetching(String target);
     String waggingTail();

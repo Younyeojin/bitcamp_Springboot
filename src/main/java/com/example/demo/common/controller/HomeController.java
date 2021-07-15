@@ -20,18 +20,15 @@ public class HomeController {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         DogController dogController = new DogController();
-        BicycleController bicycleController = new BicycleController();
-        BankAccountController bankAccountController = new BankAccountController();
         while (true) {
-            System.out.println("\n[메뉴] 0.종료 1.계산기 2.수열 3.강아지 33.개목록 4.자전거 44.자전거목록 5.오늘날짜 6.비트은행");
-            BankAccountDTO bankAccount = new BankAccountDTO();
-
+            System.out.println("\n[메뉴] 0.종료 1.계산기 2.수열 3.강아지 4.자전거정보 5.오늘날짜 6.비트은행");
             switch (scanner.next()) {
                 case "0": return;
                 case "1": new CalculatorController().calculate(); break;
                 case "2": new CalculatorController().sequence(); break;
                 case "3":
-                    DogDTO dog = new DogDTO();
+                    new DogController().main(); break;
+                    /*DogDTO dog = new DogDTO();
                     System.out.println("이름이 뭔가요?");
                     dog.setName(scanner.next());
                     System.out.println("품종이 뭔가요?");
@@ -43,9 +40,10 @@ public class HomeController {
                     break;
                 case "33":
                     dogController.show();
-                    break;
+                    break;*/
                 case "4":
-                    BicycleDTO bicycle  = new BicycleDTO();
+                    new BicycleController().main(); break;
+                    /*BicycleDTO bicycle  = new BicycleDTO();
                     System.out.println("기어가 몇단인가요?");
                     bicycle.setGear(scanner.nextInt());
                     System.out.println("어디껀가요?");
@@ -56,10 +54,9 @@ public class HomeController {
                     break;
                 case "44":
                     bicycleController.show();
-                    break;
-                case "5": new UtilController().getTodayAndCurrentTime(); break;
+                    break;*/
+                case "5": new UtilController().todayAndCurrentTime(); break;
                 case "6": new BankAccountController().main(); break;
-
             }
         }
     }

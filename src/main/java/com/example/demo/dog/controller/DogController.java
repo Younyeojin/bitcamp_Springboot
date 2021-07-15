@@ -13,7 +13,58 @@ import java.util.Scanner;
 
 
 public class DogController {
-    private DogService dogService;
+    private DogServiceImpl dogService;
+    public DogController(){
+        dogService = new DogServiceImpl();
+    }
+    public void main(){
+        Scanner scanner = new Scanner(System.in);
+        DogDTO dog = null;
+        while (true) {
+            System.out.println("[Menu] 0-Exit 1-이름/품종/색깔 2-반려동물차트");
+            switch (scanner.next()) {
+                case "0":
+                    return;
+                case "1":
+                    dog = new DogDTO();
+                    System.out.println("이름 : [     ]");
+                    dog.setName(scanner.next());
+                    dogService.createDogName(dog);
+                    dog = new DogDTO();
+                    System.out.println("품종 : [     ]");
+                    dog.setBreed(scanner.next());
+                    dogService.createDogBreed(dog);
+                    dog = new DogDTO();
+                    System.out.println("색깔 : [     ]");
+                    dog.setColor(scanner.next());
+                    dogService.createDogColor(dog);
+                    break;
+                /*case "2":
+                    dog = new DogDTO();
+                    System.out.println("품종 : [     ]");
+                    dog.setBreed(scanner.next());
+                    dogService.createDogBreed(dog);
+                    break;
+                case "3":
+                    dog = new DogDTO();
+                    System.out.println("색깔 : [     ]");
+                    dog.setColor(scanner.next());
+                    dogService.createDogColor(dog);
+                    break;*/
+                case "2":
+                    System.out.println("반려동물 차트 : " + dogService.count());
+                    System.out.println(dogService.show());
+            }
+        }
+    }
+
+    public void add(DogDTO dog) {
+    }
+}
+
+        
+    
+   /* private DogService dogService;
     public DogController() {
         dogService = new DogServiceImpl();
     }
