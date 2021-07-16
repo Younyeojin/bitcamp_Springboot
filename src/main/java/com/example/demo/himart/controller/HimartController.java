@@ -51,7 +51,7 @@ public class HimartController extends LambdaUtils {
             PhoneApp.Iphone iphone =null;
             PhoneApp.GalaxyNote galaxyNote =null;
             while (true) {
-                print.accept("[Menu] 0-종료 1-집전화 2-휴대폰 3-아이폰 4-갤럭시");
+                print.accept("\n[Menu] 0-종료 1-집전화 2-휴대폰 3-아이폰 4-갤럭시 ");
                 switch (scanner.next()) {
                     case "0": return;
                     case "1":

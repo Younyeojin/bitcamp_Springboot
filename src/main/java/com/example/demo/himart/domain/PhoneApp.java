@@ -31,7 +31,7 @@ public class PhoneApp {
         protected String internet;
         @Override public String toString() {
             return "스마트폰{" +
-                    "폰종류='" + BRAND + '\'' +
+                    "브랜드='" + BRAND + '\'' +
                     ", 제조사='" + company + '\'' +
                     ", 이동='" + move + '\'' +
                     ", 통화='" + call + '\'' +
@@ -44,7 +44,7 @@ public class PhoneApp {
             protected String pencil;
             @Override public String toString() {
                 return "스마트폰{" +
-                        "폰종류='" + BRAND + '\'' +
+                        "브랜드='" + BRAND + '\'' +
                         ", 이동='" + move + '\'' +
                         ", 통화='" + call + '\'' +
                         ", 검색='" + internet + '\'' +
