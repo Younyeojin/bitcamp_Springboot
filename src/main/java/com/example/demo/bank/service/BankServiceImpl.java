@@ -92,7 +92,17 @@ public class BankServiceImpl extends LambdaUtils implements BankService {
     }
 }  //꺼내지 않고 그대로 사용
     @Override
-    public void withdraw(AccountDTO bank) {
+    public void withdraw(AccountDTO param) {
+        for (AccountDTO a : accounts){
+            if (param.getAccountNumber().equals(a.getAccountNumber())){
+                int balance = strToInt.apply(a.getBalance());
+                a.setBalance(string.apply(balance-strToInt.apply(param.getMoney())));
+                print.accept("출금 후 잔액: "+a);
+                break;
+            }else {
+                print.accept("해당 계좌가 존재하지 않습니다");
+            }
+        }
 
     }
 

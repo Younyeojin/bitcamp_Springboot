@@ -3,6 +3,7 @@ package com.example.demo.common.controller;
 import com.example.demo.Bicycle.controller.BicycleController;
 import com.example.demo.bank.controller.BankController;
 import com.example.demo.dog.controller.DogController;
+import com.example.demo.himart.controller.HimartController;
 import com.example.demo.math.controller.MathController;
 import com.example.demo.util.controller.UtilController;
 
@@ -12,13 +13,14 @@ public class HomeController {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.println("\n[메뉴] 0.종료 1.유틸 2.수학 3.강아지 4.자전거 6.비트은행 7.하이마트\n");
+            System.out.println("\n[메뉴] 0.종료 1.유틸 2.수학 3.강아지 4.자전거 5.하이마트 6.비트은행 \n");
             switch (scanner.next()) {
                 case "0": return;
                 case "1": new UtilController().main(); break;
                 case "2": new MathController().main(); break;
                 case "3": new DogController().main(); break;
                 case "4": new BicycleController().main(); break;
+                case "5": new HimartController().main(); break;
                 case "6": new BankController().main(); break;
             }
         }
