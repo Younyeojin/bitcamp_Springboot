@@ -5,37 +5,48 @@ import com.example.demo.Bicycle.Service.BicycleServiceImpl;
 import com.example.demo.Bicycle.domain.BicycleDTO;
 import com.example.demo.util.service.LambdaUtils;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class BicycleController extends LambdaUtils {
     private BicycleService bicycleService;
-    private BicycleDTO bicycle;
-    private Scanner scanner;
-
-    //public void add(BicycleDTO bicycle){bicycleService.add(bicycle);   }
     public BicycleController(){
-        this.bicycleService=new BicycleServiceImpl();
-        this.bicycle=new BicycleDTO();
-        this.scanner=new Scanner(System.in);
+        bicycleService = new BicycleServiceImpl();
             }
-
-    public void show(){
-        print.accept("자전거의 수 : " + bicycleService.count());
-        System.out.println(bicycleService.show());
+    public void main(){
+        Scanner scanner = new Scanner(System.in);
+        BicycleDTO bicycle = null;
+        while (true){
+            print.accept("\n[메뉴] 0-종료 1-등록 2-목록\n");
+            switch (scanner.next()){
+            case"0": return;
+            case"1":
+                bicycle = new BicycleDTO();
+                print.accept("기어가 몇단인가요?\n");
+                bicycle.setGear(scanner.next());
+                print.accept("페달은 무엇입니까??\n");
+                bicycle.setPedal(scanner.next());
+                print.accept("속도가 어떻게 되나요?\n");
+                bicycle.setSpeed(scanner.next());
+                print.accept(bicycle.toString());
+                break;
+            case"2":
+                List<? extends BicycleDTO> list=bicycleService.show();
+                for (BicycleDTO b:list){
+                print.accept(b.toString());
+                }
+            }
+        }
     }
+    /*print.accept("자전거의 수 : " + bicycleService.count());
+        System.out.println(bicycleService.show());
     public int count(){
         return bicycleService.count();
     }
 
     public void main() {
         BicycleDTO bicycle  = new BicycleDTO();
-        print.accept("기어가 몇단인가요?\n");
-        bicycle.setGear(scanner.nextInt());
-        print.accept("어디껀가요?\n");
-        bicycle.setCompany(scanner.next());
-        print.accept("속도가 어떻게 되나요?\n");
-        bicycle.setSpeed(scanner.nextInt());
-        print.accept(bicycle.toString());
+
     }
     /*
     public void add(BicycleDTO bicycle){

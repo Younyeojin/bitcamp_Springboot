@@ -5,9 +5,15 @@ import lombok.Data;
 import java.util.Scanner;
 @Data
 public class BicycleDTO {
-    private int gear;
-    private String company;
-    private int speed;
+    private String gear;
+    private String pedal;
+    private String speed;
+
+    @Override
+    public String toString() {
+        return String.format("기어: %단 \n페달: %s \n스피드: %sKm",gear,pedal,speed);
+    }
+}
    /* public void setGear(int gear){
         this.gear = gear;
     }
@@ -27,8 +33,4 @@ public class BicycleDTO {
         return this.speed;
     }
 */
-    @Override
-    public String toString() {
-        return String.format("자전거의 기어는 %d이고, %s꺼 이며, 속도는 %dKm 입니다",gear,company,speed);
-    }
-}
+

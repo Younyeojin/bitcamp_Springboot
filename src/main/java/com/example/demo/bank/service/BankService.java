@@ -19,9 +19,10 @@ public interface BankService {
     String  count();
     List<? extends AccountDTO> findAll();
     String [] findAllAccountNumbers();
-    String finBalance(AccountDTO bank);
-    String deposit(AccountDTO bank);
-    String withdraw(AccountDTO bank);
+    AccountDTO findAccountByAccountNumber(String accountNumber);
+    String findBalanceByAccountNumber(String accountNumber);
+    void deposit(AccountDTO bank);
+    void withdraw(AccountDTO bank);
     void dropAccount(AccountDTO bank);
 
 

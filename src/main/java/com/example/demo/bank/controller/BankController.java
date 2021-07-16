@@ -19,17 +19,17 @@ public class BankController extends LambdaUtils {
         //BankAccountDTO account = new BankAccountDTO(); -> 이렇게되면 쓰레기는 계속 쌓이게되서 숫자가 중복으로 나옴
          AccountDTO account = null;
         while (true){
-            System.out.println("[Menu] 0-Exit 1-계좌개설 2-계좌목록 3-계좌번호목록 4-입금");
+            System.out.println("[Menu] 0-Exit 1-계좌개설 2-계좌목록 3-계좌번호목록 \n"+"\t   4-잔고확인 5-입금 6-출금\n");
             switch (scanner.next()){
                 case "0":return;
                 case "1":
                     account = new AccountDTO();
-                    print.accept("이름 : ");
+                    print.accept("이름: ");
                     account.setName(scanner.next());
                     bankService.createAccount(account);
                     break;
                 case "2":
-                    print.accept("개설된 계좌 수 : \n"+bankService.count());
+                    print.accept("개설된 계좌 수: "+bankService.count()+"개"+"\n");
                     List<? extends AccountDTO> list=bankService.findAll();
                     for (AccountDTO a: list){
                         print.accept(a.toString());
@@ -42,14 +42,26 @@ public class BankController extends LambdaUtils {
                     }
                     break;
                 case "4":
-                    print.accept("계좌번호 : ");
+                    print.accept("잔고 조회 할 계좌번호: ");
+                    bankService.findAccountByAccountNumber(scanner.next());
+                    break;
+                case "5":
+                    print.accept("입금 할 계좌번호: ");
                     account = new AccountDTO();
                     account.setAccountNumber(scanner.next());
-                    print.accept("입금액 : ");
+                    print.accept("입금액: ");
+                    account.setMoney(scanner.next());
+                    bankService.deposit(account);
+                    print.accept(account.getAccountNumber()+"의 내역: "+account);
+                    break;
+                case "6":
+                    print.accept("출금 할 계좌번호: ");
+                    account = new AccountDTO();
+                    account.setAccountNumber(scanner.next());
+                    print.accept("출금액: ");
                     account.setMoney(scanner.next());
                     break;
-                case "5": break;
-                case "6": break;
+
             }
         }
     }
