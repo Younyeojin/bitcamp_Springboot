@@ -59,12 +59,21 @@ public class BankServiceImpl extends LambdaUtils implements BankService {
     public String findBalanceByAccountNumber(String accountNumber) {
         String balance = "";
         for (AccountDTO a:accounts){
+            if(a.getAccountNumber().equals(accountNumber)){
+                balance = a.getAccountNumber().equals(accountNumber)? a.getBalance():"0";
+                break;
+        }
+        return balance;
+    }
+    /*public String findBalanceByAccountNumber(String accountNumber) {
+        String balance = "";
+        for (AccountDTO a:accounts){
             balance = a.getAccountNumber().equals(accountNumber)? a.getBalance():"0";
             break;
         }
         return balance;
     }
-/*
+
     @Override
     public AccountDTO deposit(AccountDTO param) {
         AccountDTO account = findAccountByAccountNumber(param.getAccountNumber());
@@ -86,9 +95,9 @@ public class BankServiceImpl extends LambdaUtils implements BankService {
             a.setBalance(string.apply(balance+strToInt.apply(param.getMoney())));
             print.accept("입금 후 잔액: "+a);
             break;
-        }else {
+        }/*else {
             print.accept("해당 계좌가 존재하지 않습니다");
-        }
+        }*/
     }
 }  //꺼내지 않고 그대로 사용
     @Override
@@ -99,9 +108,9 @@ public class BankServiceImpl extends LambdaUtils implements BankService {
                 a.setBalance(string.apply(balance-strToInt.apply(param.getMoney())));
                 print.accept("출금 후 잔액: "+a);
                 break;
-            }else {
+            }/*else {
                 print.accept("해당 계좌가 존재하지 않습니다");
-            }
+            }*/
         }
 
     }
